@@ -10,16 +10,18 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private var phone: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         auth = FirebaseAuth.getInstance()
+        checkHasLogin()
+//        phone = intent!!.getStringExtra("phone").toString()
+
     }
 
-    override fun onResume() {
-        super.onResume()
-
+    private fun checkHasLogin() {
         if (auth.currentUser == null) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
