@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fece2d"
+    android:background="@color/main_color"
+    android:id="@+id/splash_container"
     android:textAlignment="center"
     tools:context=".reg_view.CustomSplashActivity">
 
@@ -15,12 +16,12 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/orderbg"
         android:transitionName="logo_image"
-        android:src="@drawable/deleiver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/app_name"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -28,8 +29,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee_regular"
         android:text="@string/egg_deliver_name"
-        android:transitionName="logo_text"
         android:textSize="50sp"
+        android:transitionName="logo_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"

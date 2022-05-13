@@ -6,8 +6,13 @@
         <entry key="..\:/android/EggDeleiverApp/app/src/main/res/drawable/btn_item.xml" value="0.163" />
         <entry key="..\:/android/EggDeleiverApp/app/src/main/res/drawable/input_item.xml" value="0.1" />
         <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_login.xml" value="0.2661064425770308" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
         <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_setting.xml" value="0.5" />
         <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/fragment_history.xml" value="0.2777777777777778" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/fragment_main.xml" value="0.25" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/item_view.xml" value="0.18802083333333333" />
       </map>
     </option>
   </component>
