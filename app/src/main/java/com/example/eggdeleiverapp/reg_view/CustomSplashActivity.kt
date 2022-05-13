@@ -37,6 +37,8 @@ class CustomSplashActivity : AppCompatActivity() {
 
 
         Handler(Looper.myLooper()!!).postDelayed({
+//            splash_container.animation =
+//                AnimationUtils.loadAnimation(this@CustomSplashActivity, R.anim.fadeout)
             val intent = Intent(this@CustomSplashActivity, MainActivity::class.java)
 // how to add this figure
 //            val pairs = arrayOf(
@@ -55,5 +57,8 @@ class CustomSplashActivity : AppCompatActivity() {
         }, 4000L)
     }
 
+    override fun onPause() {
+        super.onPause()
 
+    }
 }
