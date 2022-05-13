@@ -56,14 +56,15 @@
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telefon raqam"
+            android:hint="+998123456789"
             app:boxBackgroundColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/input_item" />
+                android:background="@drawable/input_item"
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_item"
-            android:text="Go" />
+            android:text="Yuborish" />
 
         <Button
             android:id="@+id/login_sms"
@@ -100,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_item"
-            android:text="Go"
+            android:text="Yuborish"
             android:visibility="gone" />
 
     </LinearLayout>

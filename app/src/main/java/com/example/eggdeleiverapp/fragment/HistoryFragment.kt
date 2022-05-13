@@ -18,9 +18,12 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
+        //todo add right to left animation
+
         val list =
             mutableListOf(HistoryItem("ALi", Date(System.currentTimeMillis()), null, "+sdfas", 5))
-            adapter = HistoryAdapter(list, context)
+        adapter = HistoryAdapter(list, context)
         val view = inflater.inflate(R.layout.fragment_history, container, false)
         view.rv_history.adapter = adapter
         return view
