@@ -8,6 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.eggdeleiverapp.MainActivity
 import com.example.eggdeleiverapp.R
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -15,11 +16,13 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken
+import com.redmadrobot.inputmask.MaskedTextChangedListener
+import com.redmadrobot.inputmask.helper.AffinityCalculationStrategy
 import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : AppCompatActivity() {
-    val MY_PREFS_NAME = "MyPrefsFile"
+    //    val MY_PREFS_NAME = "MyPrefsFile"
     private var phone: String = ""
     private val mAuth = FirebaseAuth.getInstance()
     private lateinit var topAnim: Animation
@@ -48,15 +51,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation)
-        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
-
-        login_top.animation = topAnim
-        login_form.animation = bottomAnim
-
+        ini()
 
         login.setOnClickListener {
-            if (TextUtils.isEmpty(et_username.text) || et_username.text!!.length == 12) {
+            if (TextUtils.isEmpty(et_username.text) || et_username.text!!.length == 19) {
                 Toast.makeText(this@LoginActivity, "Telefon raqamni tekshiring", Toast.LENGTH_LONG)
                     .show()
             } else {
@@ -69,6 +67,25 @@ class LoginActivity : AppCompatActivity() {
         login_sms.setOnClickListener {
             checkSms()
         }
+    }
+
+    private fun ini() {
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation)
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
+
+        login_top.animation = topAnim
+        login_form.animation = bottomAnim
+
+        val affineFormats: MutableList<String> = ArrayList()
+        affineFormats.add("+998 ([00]) [000]-[00]-[00]")
+
+        val listener = MaskedTextChangedListener.Companion.installOn(
+            et_username,
+            "+998 ([00]) [000]-[00]-[00]",
+            affineFormats,
+            AffinityCalculationStrategy.PREFIX
+        )
+        et_username.hint = listener.placeholder()
     }
 
     private fun checkSms() {
@@ -90,8 +107,6 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
 //                    val user: FirebaseUser = task.getResult(FirebaseAuth::class).user
                     gotoMainActivity()
-                } else {
-
                 }
             }
     }
@@ -108,7 +123,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun checkView() {
-        til_username.visibility = View.GONE
+        et_username.visibility = View.GONE
         login.visibility = View.GONE
 
         til_password.visibility = View.VISIBLE
@@ -116,7 +131,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun gotoMainActivity() {
-        val intent = Intent(this, SettingActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
     }
