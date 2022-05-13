@@ -10,6 +10,7 @@ import com.example.eggdeleiverapp.reg_view.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth

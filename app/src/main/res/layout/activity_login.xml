@@ -56,14 +56,18 @@
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telefon raqam"
-            app:boxBackgroundColor="@color/white">
+            android:hint="+998(12) 345-67-89"
+            app:boxBackgroundColor="@color/white"
+            app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/input_item" />
+                android:background="@drawable/input_item"
+                android:digits="0123456789-.()+[]"
+                android:inputType="number"
+                android:textColor="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,14 +79,16 @@
             android:layout_marginTop="10dp"
             android:hint="Sms kode"
             android:visibility="gone"
-            app:boxBackgroundColor="@color/white">
+            app:boxBackgroundColor="@color/white"
+            app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tv_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_item"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_item"
-            android:text="Go" />
+            android:text="Yuborish" />
 
         <Button
             android:id="@+id/login_sms"
@@ -100,8 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_item"
-            android:text="Go"
+            android:text="Yuborish"
             android:visibility="gone" />
-
     </LinearLayout>
 </LinearLayout>
