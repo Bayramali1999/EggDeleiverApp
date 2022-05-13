@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EggDeleiverApp">
         <activity
+            android:name=".SettinActivity"
+            android:exported="false" />
+        <activity
             android:name=".reg_view.LoginActivity"
             android:exported="false" />
         <activity
@@ -23,9 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".reg_view.RegisterActivity"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
