@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "830478980409",
+    "project_id": "egg-deleiver-app",
+    "storage_bucket": "egg-deleiver-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830478980409:android:bb72fe05e7ab3d4d6444e8",
+        "android_client_info": {
+          "package_name": "com.example.eggdeleiverapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830478980409-4d79g5b23bp84psoqbkngmjsdmsojgk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwk-Gmq4vFWdfdqnJrhgdyGv8beZeesr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830478980409-4d79g5b23bp84psoqbkngmjsdmsojgk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
