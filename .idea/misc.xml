@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/drawable/btn_item.xml" value="0.163" />
-        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/drawable/input_item.xml" value="0.1" />
-        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_login.xml" value="0.2661064425770308" />
-        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_main.xml" value="0.16853932584269662" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_setting.xml" value="0.22" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/fragment_history.xml" value="0.14018691588785046" />
+        <entry key="..\:/android/EggDeleiverApp/app/src/main/res/layout/fragment_main.xml" value="0.33" />
       </map>
     </option>
   </component>
