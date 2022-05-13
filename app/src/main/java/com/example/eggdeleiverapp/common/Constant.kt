@@ -12,5 +12,7 @@ object Constant {
     const val image = "image"
     const val name = "name"
 
+    const val LOCATION_REQ_CODE = 1
+
 
 }

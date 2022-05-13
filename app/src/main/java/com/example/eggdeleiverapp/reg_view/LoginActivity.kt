@@ -7,6 +7,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eggdeleiverapp.R
 import com.google.firebase.FirebaseException
@@ -15,6 +16,8 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken
+import com.redmadrobot.inputmask.MaskedTextChangedListener
+import com.redmadrobot.inputmask.helper.AffinityCalculationStrategy
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -48,12 +51,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation)
-        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
-
-        login_top.animation = topAnim
-        login_form.animation = bottomAnim
-
+        ini()
 
         login.setOnClickListener {
             if (TextUtils.isEmpty(et_username.text) || et_username.text!!.length == 12) {
@@ -69,6 +67,25 @@ class LoginActivity : AppCompatActivity() {
         login_sms.setOnClickListener {
             checkSms()
         }
+    }
+
+    private fun ini() {
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation)
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
+
+        login_top.animation = topAnim
+        login_form.animation = bottomAnim
+
+        val affineFormats: MutableList<String> = ArrayList()
+        affineFormats.add("+998 ([00]) [000]-[00]-[00]")
+
+        val listener = MaskedTextChangedListener.Companion.installOn(
+            et_username,
+            "+998 ([00]) [000]-[00]-[00]",
+            affineFormats,
+            AffinityCalculationStrategy.PREFIX
+        )
+        et_username.hint = listener.placeholder()
     }
 
     private fun checkSms() {
