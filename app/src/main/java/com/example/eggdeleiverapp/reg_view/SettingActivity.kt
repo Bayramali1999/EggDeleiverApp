@@ -60,9 +60,7 @@ class SettingActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onCancelled(error: DatabaseError) {
-                }
-
+                override fun onCancelled(error: DatabaseError) {}
             })
 
 

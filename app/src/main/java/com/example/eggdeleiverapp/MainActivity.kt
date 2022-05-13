@@ -4,12 +4,19 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.setPadding
+import com.example.eggdeleiverapp.common.Constant.USERS
 import com.example.eggdeleiverapp.fragment.HistoryFragment
 import com.example.eggdeleiverapp.fragment.MainFragment
 import com.example.eggdeleiverapp.reg_view.LoginActivity
+import com.example.eggdeleiverapp.reg_view.SettingActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_main.*
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
@@ -54,6 +61,24 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
+        } else {
+            val databaseReference =
+                FirebaseDatabase.getInstance().reference.child(USERS).child(auth.currentUser!!.uid)
+            databaseReference.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (!snapshot.exists()) {
+                        val intent = Intent(this@MainActivity, SettingActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    val intent = Intent(this@MainActivity, SettingActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            })
         }
     }
 

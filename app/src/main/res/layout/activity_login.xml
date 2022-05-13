@@ -51,21 +51,15 @@
         android:layout_marginRight="5dp"
         android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_username"
-            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        <EditText
+            android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telefon raqam"
-            app:boxBackgroundColor="@color/white">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_item" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:background="@drawable/input_item"
+            android:digits="0123456789-.()+[]"
+            android:hint="+998(12) 345-67-89"
+            android:inputType="number"
+            android:textColor="@color/black" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_password"
@@ -75,14 +69,16 @@
             android:layout_marginTop="10dp"
             android:hint="Sms kode"
             android:visibility="gone"
-            app:boxBackgroundColor="@color/white">
+            app:boxBackgroundColor="@color/white"
+            app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tv_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_item"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_item"
-            android:text="Go" />
+            android:text="Yuborish" />
 
         <Button
             android:id="@+id/login_sms"
@@ -100,8 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_item"
-            android:text="Go"
+            android:text="Yuborish"
             android:visibility="gone" />
-
     </LinearLayout>
 </LinearLayout>
